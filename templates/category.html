@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h2> Car Types </h2>
+{% if carTypes != [] %}
+    <a href="{{url_for('newCarType')}}" >
+        <button>Create a New Car Type</button>
+    </a>
+    {% for carType in carTypes %}
+        <h3>{{carType.name}}</h3>
+        <a href="{{url_for('showModel', carType_id = carType.id)}}">
+             <button>Models</button>
+         </a>
+         <a href="{{url_for('editCarType',carType_id = carType.id)}}">
+             <button>Edit</button>
+         </a>
+        <a href="{{url_for('deleteCarType',carType_id = carType.id)}}">
+            <button>Delete</button>
+        </a>
+    {% endfor %}
+{% else %}
+    <p> There are no Car Types, create one!  <p>
+    <a href="{{url_for('newCarType')}}" >
+        <button>Create a New Car Type</button>
+    </a>
+{% endif %}
+{% endblock %}

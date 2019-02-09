@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2> Edit Car Type </h2>
+<form action="{{ url_for('editCarType',carType_id = carType.id)}}" method='post'>
+	<p>Name:</p>
+		<input type ='text' size='30' name='name' placeholder = '{{carType.name }}'>
+<input type='submit' value='Edit'>
+</form>
+<a href="{{url_for('showModel', carType_id = carType.id)}}">
+     <button>Models</button>
+ </a>
+<a href="/cartype"><button> Cancel </button></a>
+{% endblock %}
