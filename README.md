@@ -23,19 +23,46 @@ Source of what will I learn is from Udacity's [Full Stack Web Developer Nanodegr
   * [VirtualBox](https://www.virtualbox.org/)
 
 #### Setup Project:
-  1. Install Vagrant and VirtualBox
-  2. Download or Clone this project [fullstack-nanodegree-vm](https://github.com/udacity/fullstack-nanodegree-vm) repository.
+1. Install Vagrant and VirtualBox
+2. Download or Clone [fullstack-nanodegree-vm](https://github.com/udacity/fullstack-nanodegree-vm) repository.
+3. Find the catalog folder and replace it with the content of this current repository, by either downloading or cloning it from
+[Here](https://github.com/dgethner/Item-Catalog).
 
 
-#### Launch Project
-  1. Launch the Vagrant VM using command:
+#### Starting The Application
+  1. Launch your terminal
+  2. Change directory into the following file path on your computer
+  > fullstack-nanodegree-vm-master/vagrant/catalog
 
+  3. Run the following command to set-up for your VM
   ```
     $ vagrant up
   ```
-  2. Run your application within the VM
+  4. Run the following command to login to your VM
+  ```
+    $ vagrant ssh
+  ```
+  5. Change directory in your VM to the catalog folder
+  ```
+    $ cd /vagrant/catalog
+  ```
+  6. Run the following command to populate the database
+  ```
+    $ python lotsofcars.py
+  ```
+  7. Run the following command to run the application
+  ```
+    $ python catalog.py
+  ```
+  8. Access and test your application by visiting [http://localhost:8000](http://localhost:8000).
 
-  ```
-    $ python /vagrant/catalog/main.py
-  ```
-  3. Access and test your application by visiting [http://localhost:8000](http://localhost:8000).
+### How to Access API Endpoints
+
+* Return JSON for all the Car Types
+> http://localhost:8000/cartype/JSON
+* Return JSON of all the Models for a Car Type (change carType_id as needed)
+> http://localhost:8000/cartype/<int:carType_id>/JSON
+* Return JSON for all Car Models
+> http://localhost:8000/item/JSON
+* Return JSON for a Car Model (change carType_id & model_id as needed)
+> http://localhost:8000/cartype/cartype/<int:carType_id>/item/<int:model_id>/JSON
