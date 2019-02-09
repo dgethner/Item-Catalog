@@ -66,3 +66,7 @@ Source of what will I learn is from Udacity's [Full Stack Web Developer Nanodegr
 > http://localhost:8000/item/JSON
 * Return JSON for a Car Model (change carType_id & model_id as needed)
 > http://localhost:8000/cartype/cartype/<int:carType_id>/item/<int:model_id>/JSON
+
+Other sources:
+* normalize.css [necolas](https://github.com/necolas/normalize.css)
+* skeleton.css [dhg](https://github.com/dhg/Skeleton)
